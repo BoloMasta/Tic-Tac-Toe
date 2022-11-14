@@ -61,3 +61,27 @@ restartBtn.addEventListener("click", () => {
     cell.addEventListener("click", handleClick);
   });
 });
+
+// AI logic
+
+const getEmptyIndexes = () => {
+  const emptyCells = [];
+  for (let cell of cells) {
+    if (cell.textContent === "") {
+      emptyCells.push(cell.id);
+    }
+  }
+  return emptyCells;
+};
+
+const getBoard = () => {
+  const board = [];
+  for (let cell of cells) {
+    if (cell.textContent === "") {
+      board.push(cell.id);
+    } else {
+      board.push(cell.textContent);
+    }
+  }
+  return board;
+};
